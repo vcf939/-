@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>永力智庫共識會議流程時間表</title>
+  <style>
+    :root {
+      --bg: #f7f5ef;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #667085;
+      --primary: #0f766e;
+      --primary-dark: #115e59;
+      --accent: #d97706;
+      --line: #e5e7eb;
+      --soft: #ecfdf5;
+      --soft-2: #fff7ed;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: linear-gradient(180deg, #f7f5ef 0%, #ffffff 48%, #f7f5ef 100%);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, rgba(15, 118, 110, 0.16), transparent 32%),
+                  linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
+      border: 1px solid rgba(15, 118, 110, 0.16);
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary-dark);
+      background: rgba(15, 118, 110, 0.08);
+      border: 1px solid rgba(15, 118, 110, 0.15);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    h1 {
+      margin: 18px 0 8px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      color: #0f172a;
+    }
+
+    .subtitle {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .meta-card {
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    .meta-card .label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .meta-card .value {
+      margin-top: 4px;
+      font-size: 18px;
+      font-weight: 800;
+      color: #111827;
+    }
+
+    section {
+      margin-top: 28px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.05);
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 26px;
+      line-height: 1.3;
+      color: #0f172a;
+    }
+
+    h3 {
+      margin: 26px 0 10px;
+      font-size: 20px;
+      color: var(--primary-dark);
+    }
+
+    p { margin: 0 0 14px; }
+
+    .purpose {
+      font-size: 17px;
+    }
+
+    .purpose strong {
+      color: var(--primary-dark);
+    }
+
+    .outcomes {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .outcome {
+      background: var(--soft);
+      border: 1px solid rgba(15, 118, 110, 0.14);
+      border-radius: 18px;
+      padding: 16px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      min-height: 92px;
+    }
+
+    .agenda {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      margin-top: 18px;
+    }
+
+    .agenda th,
+    .agenda td {
+      padding: 16px 18px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .agenda th {
+      background: #0f766e;
+      color: white;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .agenda tr:last-child td { border-bottom: none; }
+    .agenda tr:nth-child(even) td { background: #fafafa; }
+
+    .time {
+      white-space: nowrap;
+      font-weight: 900;
+      color: var(--primary-dark);
+    }
+
+    .topic {
+      font-weight: 900;
+      color: #111827;
+    }
+
+    .note {
+      color: var(--muted);
+      margin-top: 6px;
+      font-size: 15px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--soft-2);
+      color: #9a3412;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    ol, ul {
+      margin: 12px 0 0 1.25em;
+      padding: 0;
+    }
+
+    li { margin: 8px 0; }
+
+    .prep-list {
+      display: grid;
+      gap: 14px;
+      counter-reset: prep;
+      margin-top: 18px;
+    }
+
+    .prep-item {
+      position: relative;
+      background: #fafafa;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 18px 18px 58px;
+    }
+
+    .prep-item::before {
+      counter-increment: prep;
+      content: counter(prep);
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .recording-box {
+      background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%);
+      border: 1px solid rgba(217, 119, 6, 0.22);
+      border-radius: 20px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+
+    .cols {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      text-align: center;
+      border: 1px solid rgba(217, 119, 6, 0.25);
+      background: #fffaf0;
+      color: #92400e;
+      border-radius: 999px;
+      padding: 8px 10px;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 32px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 840px) {
+      .hero { padding: 28px; }
+      .meta-grid, .outcomes, .cols { grid-template-columns: 1fr; }
+      section { padding: 22px; }
+      .agenda, .agenda tbody, .agenda tr, .agenda td { display: block; width: 100%; }
+      .agenda thead { display: none; }
+      .agenda tr { border-bottom: 1px solid var(--line); }
+      .agenda tr:last-child { border-bottom: none; }
+      .agenda td { border-bottom: none; padding: 12px 16px; }
+      .agenda td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 800;
+        margin-bottom: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="eyebrow">永力智庫｜共識會議草案</div>
+      <h1>永力智庫共識會議流程時間表</h1>
+      <p class="subtitle">從願景、定位、營運計畫到股東權益與治理原則的共同校準</p>
+      <div class="meta-grid">
+        <div class="meta-card">
+          <div class="label">日期</div>
+          <div class="value">下週一</div>
+        </div>
+        <div class="meta-card">
+          <div class="label">時間</div>
+          <div class="value">10:00–16:00</div>
+        </div>
+        <div class="meta-card">
+          <div class="label">會議形式</div>
+          <div class="value">共識工作會議</div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>會議目的</h2>
+      <div class="purpose">
+        <p>本次會議的目的，是讓永力智庫核心夥伴在正式展開營運前，先完成一次重要的共同校準：<strong>我們要成為什麼樣的組織、優先服務誰、第一階段要推出什麼服務、各自願意投入什麼，以及股東權益與治理原則如何建立。</strong></p>
+        <p>這場會議不只是資訊交換，而是要形成可被追蹤的共識、決策與行動項目，作為 2026 年下半年營運啟動的基礎。</p>
+      </div>
+      <div class="outcomes">
+        <div class="outcome">二～三年願景初稿</div>
+        <div class="outcome">定位與優先服務方向</div>
+        <div class="outcome">下半年營運行動計畫</div>
+        <div class="outcome">股東權益與治理原則初稿</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>流程時間表</h2>
+      <table class="agenda">
+        <thead>
+          <tr>
+            <th style="width: 150px;">時間</th>
+            <th style="width: 280px;">流程</th>
+            <th>目的與預期產出</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="time" data-label="時間">10:00–10:10</td>
+            <td data-label="流程"><div class="topic">Check-in：帶給永力智庫及夥伴的禮物</div></td>
+            <td data-label="目的與預期產出">每人以一件實體、照片、文字、故事或一句話，分享自己想帶給永力智庫與夥伴的價值、資源或期待。</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="時間">10:10–11:30</td>
+            <td data-label="流程"><div class="topic">分享心中的永力智庫未來藍圖</div></td>
+            <td data-label="目的與預期產出">每人分享 10–15 分鐘，可使用 PPT、口頭、圖像或其他形式。建議聚焦：我看見的市場機會、我期待永力智庫二～三年後成為什麼、我願意投入或帶進來的資源。</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="時間">11:30–12:00</td>
+            <td data-label="流程"><div class="topic">凝聚共識：型塑二～三年願景</div></td>
+            <td data-label="目的與預期產出">收斂各自想像，形成初版共同願景、服務對象與差異化方向。<span class="tag">產出：二～三年願景敘述初稿</span></td>
+          </tr>
+          <tr>
+            <td class="time" data-label="時間">12:00–12:30</td>
+            <td data-label="流程"><div class="topic">午餐／自由交流</div></td>
+            <td data-label="目的與預期產出">讓前段討論持續沉澱與非正式交流。</td>
+          </tr>
+          <tr>
+            <td class="time" data-label="時間">12:30–13:00</td>
+            <td data-label="流程"><div class="topic">定位聚焦：我們不做什麼？我們優先做什麼？</div></td>
+            <td data-label="目的與預期產出">聚焦第一階段客群、問題與服務範圍，避免一開始服務過度發散。<span class="tag">產出：優先服務方向與暫不投入項目</span></td>
+          </tr>
+          <tr>
+            <td class="time" data-label="時間">13:00–13:30</td>
+            <td data-label="流程"><div class="topic">現況議題：基礎工程、進度與待決事項</div></td>
+            <td data-label="目的與預期產出">包含公司設立、永力網站、治理／協作平台、定期會議、共同知識庫等。每項議題請區分：現況與已完成進度、待議問題、需本次確認的決策。<span class="tag">產出：基礎工程任務清單與決策事項</span></td>
+          </tr>
+          <tr>
+            <td class="time" data-label="時間">13:30–14:30</td>
+            <td data-label="流程"><div class="topic">2026 年下半年營運計畫</div></td>
+            <td data-label="目的與預期產出">討論第一批服務方案、首波市場與對象、示範案例、時程、營收目標、成本與預算。<span class="tag">產出：7–12 月營運行動表與第一批產品／案例優先順序</span></td>
+          </tr>
+          <tr>
+            <td class="time" data-label="時間">14:30–15:00</td>
+            <td data-label="流程"><div class="topic">角色與承諾：誰負責什麼？期待夥伴支援什麼？</div></td>
+            <td data-label="目的與預期產出">依服務、技術、內容、商務、專案、平台等工作面向，初步確認主責、協作、諮詢與知會角色。<span class="tag">產出：核心角色分工與近期投入承諾</span></td>
+          </tr>
+          <tr>
+            <td class="time" data-label="時間">15:00–16:00</td>
+            <td data-label="流程"><div class="topic">股東權益、投入方式與治理確認</div></td>
+            <td data-label="目的與預期產出">討論股東角色、股權與分潤原則、資金／專業／案源投入認列、專案報酬、決策權責、財務透明、加入與退出機制等。<span class="tag">產出：股東權益與治理原則初稿，以及後續需由專業人士協助確認的事項</span></td>
+          </tr>
+          <tr>
+            <td class="time" data-label="時間">16:00</td>
+            <td data-label="流程"><div class="topic">Check-out</div></td>
+            <td data-label="目的與預期產出">每人用一句話說明：今天最重要的共識、自己下一步的承諾，或仍需釐清的一件事。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>會前準備建議</h2>
+      <div class="prep-list">
+        <div class="prep-item">每位夥伴準備 10 分鐘分享；若使用 PPT，建議控制在 3～5 頁。</div>
+        <div class="prep-item">請先提出當天要討論的議題，並區分為「待議」與「待決」。</div>
+        <div class="prep-item">請先思考：
+          <ul>
+            <li>我願意為永力智庫投入什麼？</li>
+            <li>我期待從永力智庫獲得什麼？</li>
+            <li>我認為第一年最應優先完成的一件事是什麼？</li>
+          </ul>
+        </div>
+        <div class="prep-item">若有公司設立、股權、分潤、報價、合作模式等既有草案，請於會前提供，讓大家可先閱讀。</div>
+        <div class="prep-item">當天會委由江江老師規劃整場會議即時紀錄，並將每段討論即時整理為暫訂的「共識、待辦、主責、期限、待決事項」等欄位。</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>即時紀錄與會後整理</h2>
+      <p>本次會議建議同步建立雲端紀錄，讓討論內容能在會中即時校正，會後也能轉化為正式紀錄、任務追蹤與後續治理依據。</p>
+      <div class="recording-box">
+        <strong>建議紀錄欄位</strong>
+        <div class="cols">
+          <div class="pill">共識</div>
+          <div class="pill">待辦</div>
+          <div class="pill">主責</div>
+          <div class="pill">期限</div>
+          <div class="pill">待決事項</div>
+        </div>
+        <p class="note">涉及股權、分潤、金額、公司治理與角色授權的內容，需在會中明確確認，並於會後視需要交由會計師或律師協助轉為正式文件。</p>
+      </div>
+    </section>
+
+    <footer>
+      永力智庫共識會議｜流程時間表草案
+    </footer>
+  </main>
+</body>
+</html>
